@@ -1,0 +1,7 @@
+hosts: [<<host>>.gremlin.cosmosdb.azure.com]
+port: 443
+username: /dbs/<<database>>/colls/<<graph>>
+password: <<primary key>>
+connectionPool: {
+  enableSsl: true}
+serializer: { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessageSerializerV2d0, config: { serializeResultToString: true }}

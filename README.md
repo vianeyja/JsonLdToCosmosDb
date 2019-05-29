@@ -18,16 +18,9 @@ This repository contains a parser that reads a json ld from a path and inserts t
 | username | `/dbs/<<database>>/colls/<<graph>>` | The resource where `<<database>>` is your database name and `<<graph>>` is your collection name. |
 | password | Your primary key | This is your primary key, which you can retrieve from the Keys page of the Azure portal, in the Primary Key box. Use the copy button on the left side of the box to copy the value. |
 
-2.Open the class JsonLdIngestionToCosmos.java and in the file reader, change the path to point to your json ld location.
-```java
-  try (FileReader reader = new FileReader("C:\\jsonld.json"))
-        {
-            //Read JSON file
-            Object obj = jsonParser.parse(reader);
-            
-            //Parse file to JSON Object
-            JSONObject jsonObject = (JSONObject) obj;
-
+2.Open the file inside  src/main/resources/pom.properties and change the path to point to your json ld location.
+```
+ file=C:\\yourfilelocation.json
 ```
 
 ## Expected result

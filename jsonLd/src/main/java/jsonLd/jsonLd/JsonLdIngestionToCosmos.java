@@ -22,6 +22,7 @@ import org.apache.tinkerpop.gremlin.driver.exception.ResponseException;
 
 import java.io.File;
 import java.util.Map;
+import java.util.Properties;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
@@ -32,16 +33,21 @@ public class JsonLdIngestionToCosmos {
 	static ArrayList<String> context = new ArrayList<String>();
 	static ArrayList<String> contextEdges = new ArrayList<String>();
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 
         //JSON parser object to parse read file
         JSONParser jsonParser = new JSONParser();
          
         /**This logic is to read a json ld file from a path
-         * Change the path to point to your file*/
+         *The path is specified inside src/main/resources/pom.properties file*/
         
-        try (FileReader reader = new FileReader("C:\\jsonld.json"))
+        Properties properties = new Properties();
+        properties.load(JsonLdIngestionToCosmos.class.getResourceAsStream("/pom.properties"));
+        
+        String filePath = properties.getProperty("file");       
+        
+        try (FileReader reader = new FileReader(filePath))
         {
             //Read JSON file
             Object obj = jsonParser.parse(reader);

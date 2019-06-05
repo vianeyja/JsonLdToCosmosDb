@@ -13,7 +13,7 @@ This repository contains a parser that reads a json ld from a path and inserts t
 
 | Setting | Suggested Value | Description |
 | ------- | --------------- | ----------- |
-| <<host>> | [***.gremlin.cosmosdb.azure.com] | This is the Gremlin URI value on the Overview page of the Azure portal, in square brackets, with the trailing :443/ removed.  This value can also be retrieved from the Keys tab, using the URI value by removing https://, changing documents to graphs, and removing the trailing :443/. |
+| <hosts> | [***.gremlin.cosmosdb.azure.com] | This is the Gremlin URI value on the Overview page of the Azure portal, in square brackets, with the trailing :443/ removed.  This value can also be retrieved from the Keys tab, using the URI value by removing https://, changing documents to graphs, and removing the trailing :443/. |
 | port | 443 | Set the port to 443 |
 | username | `/dbs/<<database>>/colls/<<graph>>` | The resource where `<<database>>` is your database name and `<<graph>>` is your collection name. |
 | password | Your primary key | This is your primary key, which you can retrieve from the Keys page of the Azure portal, in the Primary Key box. Use the copy button on the left side of the box to copy the value. |
